@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- METADATOS Y CONFIGURACIÓN -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Forzar scroll al inicio lo más pronto posible
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      window.scrollTo(0, 0);
+    </script>
+    <title>Menú Desplegable y Scroll Suave</title>
+    <link rel="stylesheet" href="stilles/styles.css" />
+  </head>
+  <body>
+    <div class="content">
+      <!-- HEADER: Menú (Logo, botón y navegación) -->
+      <header class="header" id="header">
+        <div class="header-container">
+          <!-- Logo a la izquierda -->
+          <div id="logo">
+            <img src="img/joselog.png" alt="Logo" />
+          </div>
+          <!-- Botón de menú (hamburguesa) -->
+          <button
+            type="button"
+            class="menu-toggle"
+            aria-label="Abrir menú"
+            aria-controls="contact-menu"
+            aria-expanded="false"
+          ></button>
+        </div>
+        <!-- Menú desplegable -->
+        <nav id="contact-menu" class="menu">
+          <ul>
+            <li><a href="#seccion1">presentacion</a></li>
+            <li><a href="#seccion2">proyectos</a></li>
+            <li><a href="#seccion3">habilidades</a></li>
+            <li><a href="#seccion4">Correo</a></li>
+            <li><a href="#seccion5">Sobre mí</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div data-aos="fade-up">
+        <!-- Contenido animado -->
+      </div>
+      <!-- CONTENIDO PRINCIPAL -->
+      <main class="contenido">
+        <!-- SECCIÓN 1: HERO (sin modificaciones respecto al original) -->
+        <section id="seccion1" class="seccion hero-section">
+          <div class="hero-container">
+            <!-- Texto principal (lado izquierdo) -->
+            <div class="hero-text">
+              <h1>Frontend Developer.</h1>
+              <p>
+                diseñador novato de <strong>web</strong> y aficonado a la programacion.
+              </p>
+              <!-- Detalles o "bullet points" -->
+              <div class="hero-details">
+                <div class="detail-box">
+                  <p>
+                    Estidiante de Ingenieria de Sistemas.
+                  </p>
+                </div>
+                <div class="detail-box">
+                  <p>
+                    Disponivilidad <strong>inmediata </strong> para trabajar y flexibilidad de horarios.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Imagen con marco decorativo (lado derecho) -->
+            <div class="hero-image">
+              <!-- Reemplaza "img/person.jpg" con la ruta de tu propia imagen -->
+              <img src="img/joselog.png" alt="Profile Photo" />
+              <div class="hero-frame"></div>
+            </div>
+          </div>
+        </section>
+        <!-- SECCIÓN 2: PROYECTOS -->
+        <section id="seccion2" class="seccion">
+          <div class="projects">
+            <div class="projects-text">
+              <h2>PROYECTOS</h2>
+              <p>coleccion de proyectos </p>
+            </div>
+          </div>
+          <div class="project-grid">
+            <!-- Proyecto 1 -->
+            <div class="project">
+              <div class="project-wrap">
+                <div class="project-img"
+                  style="background-image: url(img/react.png), url(img/react.png)"
+                ></div>
+                <div class="project-text">
+                  <h3>react 1</h3>
+                  <p class="project-parragraph">
+                    Desarrollé un contador de clics en React utilizando props y el hook useState para manejar el estado del contador. La aplicación incrementa el valor cada vez que se hace clic en un botón y muestra la cantidad de clics en pantalla, demostrando el manejo de estados y la reutilización de componentes en React.
+                  </p>
+                </div>
+              </div>
+              
+            </div>
+
+            <!-- Proyecto 2 -->
+            <div class="project">
+              <div class="project-wrap">
+                <div
+                  style="background-image: url(img/proyecto1.png), url(img/proyecto1.png)"
+                  class="project-img"
+                ></div>
+                <div class="project-text">
+                  <h3>Conversor de moneda</h3>
+                  <p class="project-parragraph">
+                    Desarrollé un conversor de moneda utilizando JavaScript y una API para obtener tasas de cambio en tiempo real. La aplicación permite seleccionar diferentes monedas y calcular su equivalencia de forma rápida e intuitiva, con un diseño simple y funcional
+                  </p>
+                </div>
+              </div>
+              
+            </div>
+
+            <!-- Proyecto 3 -->
+            <div class="project">
+              <div class="project-wrap">
+                <div
+                  style="background-image: url(img/proyecto2.png), url(img/proyecto2.png)"
+                  class="project-img"
+                ></div>
+                <div class="project-text">
+                  <h3>portafolio 1 </h3>
+                  <p class="project-parragraph">
+                    Este fue mi primer diseño de portafolio web, donde implementé animaciones en JavaScript y consumí una API para mostrar contenido dinámico. Utilicé HTML, CSS y JS para crear una interfaz interactiva y responsiva, incorporando efectos visuales que mejoran la experiencia del usuario
+                  </p>
+                </div>
+              </div>              
+            </div>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 3: HABILIDADES -->
+        <section id="seccion3" class="seccion">
+          <div class="habilidades">
+            <div class="habilidades-text">
+              <h2>HABILIDADES</h2>
+              <p>A collection of projects I've worked on.</p>
+            </div>
+          </div>
+          <ul class="lista-habilidades">
+            <li>
+              <img src="img/html.png" alt="HTML" class="logo-habilidad" />
+            </li>
+            <li>
+              <img src="img/css.png" alt="CSS" class="logo-habilidad" />
+            </li>
+            <li>
+              <img src="img/javascript.png" alt="JavaScript" class="logo-habilidad" />
+            </li>
+            <li>
+              <img src="img/python.png" alt="Python" class="logo-habilidad" />
+            </li>
+            <li>
+              <img src="img/csharp.png" alt="C#" class="logo-habilidad" />
+            </li>
+          </ul>
+        </section>
+
+        <!-- SECCIÓN 4: CONTACTO -->
+        <section id="seccion4" class="seccion">
+          <div class="contact-container">
+            <div class="contact-header">
+              <h1>Send me a message!</h1>
+              <p>
+                Got a question or proposal, or just want to say hello? Go ahead.
+              </p>
+            </div>
+            <!-- Bloque para copiar el correo -->
+            <div
+              class="copy-container"
+              id="copyEmailContainer"
+              title="Haz clic para copiar mi correo"
+            >
+              <!-- Mensaje de copia, inicialmente oculto -->
+              <div class="copy-message" id="copyMessage">Correo copiado</div>
+              <!-- Icono de copiar (dos capas superpuestas) -->
+              <svg
+                class="copy-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path
+                  d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                ></path>
+              </svg>
+              <span class="copy-text" id="myEmail">tarquijoseticona@gmail.com</span>
+            </div>
+            <!-- Formulario (solo para recoger datos localmente) -->
+            <div class="contact-form">
+              <div>
+                <div class="field-label">Name</div>
+                <input type="text" id="name" placeholder="JOSE GONZALO TARQUI TICONA" />
+              </div>
+              <div>
+                <div class="field-label">Email Address</div>
+                <input type="email" id="senderEmail" placeholder="example@domain.com" />
+              </div>
+              <div class="full-width">
+                <div class="field-label">Your Message</div>
+                <textarea id="message" placeholder="Your message here..."></textarea>
+              </div>
+            </div>
+            <!-- Botón para abrir Gmail Web con borrador pre-llenado -->
+            <div class="contact-buttons">
+              <button class="btn" id="shootBtn">SHOOT →</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 5: FOOTER / SOBRE MÍ (estructura original sin modificaciones) -->
+        <section id="seccion5" class="seccion">
+          <div class="inner-content">
+            <div class="inner-content">
+              <div class="footer-main">
+                <div class="about-me">
+                  <h2 class="Sobremi">Sobre Mí</h2>
+                  <p>
+                    ¡Hola! Soy un apasionado del desarrollo web y la tecnología. Me encanta aprender y crear experiencias digitales únicas. Siempre estoy en busca de nuevos retos y oportunidades para mejorar mis habilidades.
+                  </p>
+                </div>
+              </div>
+            </div>
+          <div class="footer-bottom">
+            <span>@tarquijoseticona</span>
+            <ul class="social-contact iMAreF">
+              <li data-v-670b333e="">
+                <a data-v-670b333e="" href="https://github.com/JosGtt" aria-label="jose on GitHub" target="_blank" rel="noreferrer noopener">
+                  GH
+                </a>
+              </li>
+              <li data-v-670b333e="">
+                <a data-v-670b333e="" href="https://www.linkedin.com/in/jose-gonzalo-tarqui-ticona-746251332/" aria-label="Jose on LinkedIn" target="_blank" rel="noreferrer noopener">
+                  LN
+                </a>
+              </li>
+              <li data-v-670b333e="">
+                <a data-v-670b333e="" href="cv/CV COMPLETO.pdf" download="CV COMPLETO.pdf" aria-label="Descargar CV">
+                  CV
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </main>
+
+      <!-- INDICADOR DE SECCIONES -->
+      <div class="section-indicator">
+        <ul>
+          <li class="active">
+            <div class="shape diamond"></div>
+          </li>
+          <li>
+            <div class="shape diamond"></div>
+          </li>
+          <li>
+            <div class="shape diamond"></div>
+          </li>
+          <li>
+            <div class="shape diamond"></div>
+          </li>
+          <li>
+            <div class="shape diamond"></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="js/menu.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/indicador.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/anima.js"></script>
+  </body>
+</html>

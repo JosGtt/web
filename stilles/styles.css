@@ -1,0 +1,695 @@
+/* ========================
+   GENERAL
+========================== */
+body {
+  font-family: 'Montserrat-Regular', Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #fafeff;
+  color: #0a001b;
+  width: 100%;
+  height: 100%;
+  scroll-behavior: smooth;
+  overflow: hidden; /* Evita el scroll manual mientras se usa el efecto */
+}
+
+
+/* ========================
+   HEADER & MENÚ
+========================== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: transparent;
+  padding: 10px 20px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo img {
+  width: 50px;
+  height: auto;
+}
+
+/* Botón de menú (hamburguesa) */
+.menu-toggle {
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  margin-right: 50px;
+}
+
+.menu-toggle::before,
+.menu-toggle::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 4px;
+  background: black;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.3s ease-in-out;
+}
+
+.menu-toggle::before {
+  top: 10px;
+}
+
+.menu-toggle::after {
+  bottom: 10px;
+}
+
+.menu-toggle[aria-expanded="true"]::before {
+  transform: translateX(-50%) rotate(45deg);
+  top: 18px;
+}
+
+.menu-toggle[aria-expanded="true"]::after {
+  transform: translateX(-50%) rotate(-45deg);
+  bottom: 18px;
+}
+
+/* Menú desplegable */
+.menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: white;
+  width: 200px;
+  border: 1px solid #ddd;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu.show {
+  display: block;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu ul li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: black;
+  display: block;
+}
+
+.menu ul li a:hover {
+  background: #ddd;
+}
+/* MENÚ DESPLEGABLE CON NUEVO COLOR Y ANIMACIÓN */
+.menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.7);        /* Negro transparente */
+  width: 200px;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Borde sutil */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  opacity: 0;
+  transform: translateY(-20px);         /* Posición inicial para la animación */
+}
+.menu.show {
+  display: block;
+  animation: slideDown 0.3s ease forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilos para los enlaces dentro del menú */
+.menu ul li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+}
+
+.menu ul li a:hover {
+  background: #555;
+}
+
+
+/* ========================
+  SECCIONES Y LAYOUT
+========================== */
+.seccion {
+  height: 100vh;
+  overflow-y: auto;
+  padding: 0;
+  font-size: 24px;
+  border: none;
+}
+
+/* Sección 1: Hero */
+#seccion1 {
+  height: auto !important;
+  min-height: 600px;
+  background: linear-gradient(90deg, #4831d4 67%, #ccf381 33%);
+}
+/* Sección 2: Proyectos */
+#seccion2 {
+  min-height: 100vh;
+  padding: 20px;
+  overflow-y: hidden;
+  background: linear-gradient(to bottom, transparent 50%, #4731d44f 100%);
+}
+
+/* Sección 3: Habilidades */
+#seccion3 {
+  background: linear-gradient(to bottom, #4731d44f, #ffffff);
+}
+
+/* Sección 4: Contacto */
+#seccion4 {
+  background: linear-gradient(to bottom, transparent 50%, #ccf381 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Sección 5: Footer / Sobre Mí */
+#seccion5 {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #3d155f;
+  color: #badd76;
+  margin: 0;
+  padding: 0;
+}
+
+/* ========================
+   HERO SECTION (Sección 1)
+========================== */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 40px;
+  color: #fff;
+  position: relative;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.hero-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.detail-box {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.hero-image {
+  position: relative;
+}
+
+.hero-image img {
+  width: 300px;
+  border-radius: 8px;
+  z-index: 2;
+}
+
+.hero-frame {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 300px;
+  height: 300px;
+  border: 2px solid #fff;
+  z-index: 1;
+}
+
+/* ========================
+   PROYECTOS (Sección 2)
+========================== */
+.project-grid {
+  margin: 0 auto 2rem;
+  display: grid;
+  max-width: 1200px;
+  padding: 2rem;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  color: #020202;
+  background: #ccf381;
+  border-radius: 2%;
+}
+
+.project {
+  margin: 0;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(43, 105, 251, 0.12);
+  box-shadow: rgba(43, 105, 251, 0.06) 0px 0px 0.5rem 0.5rem;
+  position: relative;
+}
+
+.project-wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.project-parragraph {
+  margin-bottom: 3.5rem;
+}
+
+.project-img {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+.project-text {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  padding: 0.5rem;
+}
+
+.project-buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: 0;
+  padding: 1rem;
+}
+
+.projects {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3rem 1rem;
+}
+
+.projects-text {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* ========================
+   HABILIDADES (Sección 3)
+========================== */
+.habilidades {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+}
+
+.habilidades-text {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lista-habilidades {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.logo-habilidad {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  padding: 10px;
+  border: 4px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to right, blue, purple);
+}
+
+/* ========================
+   CONTACTO (Sección 4)
+========================== */
+.contact-container {
+  max-width: 700px;
+  width: 100%;
+  background: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #5c4aff;
+}
+
+.contact-header p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-form .full-width {
+  grid-column: 1 / 3;
+}
+
+.field-label {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.3rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  font-size: 1rem;
+  padding: 8px 4px;
+  background: transparent;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-bottom-color: #5c4aff;
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+}
+
+.contact-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+  background-color: #5c4aff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #4a3bd8;
+}
+
+/* Botón para copiar el correo */
+.copy-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #eee;
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  position: relative;
+}
+
+.copy-container:hover {
+  background: #ddd;
+}
+
+.copy-text {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.copy-icon {
+  width: 16px;
+  height: 16px;
+  fill: #333;
+}
+
+.copy-message {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #5c4aff;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.copy-message.show {
+  opacity: 1;
+}
+
+/* ========================
+   FOOTER (Sección 5)
+========================== */
+.inner-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.footer-main,
+.footer-bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(144, 179, 75, 0.7);
+  padding-top: 1rem;
+}
+
+.social-contact {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.social-contact a {
+  color: #badd76;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.social-contact a:hover {
+  color: darkgreen;
+}
+
+.Sobremi {
+  color: #cbc9e2;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+/* ========================
+   INDICADOR DE SECCIONES
+========================== */
+.section-indicator {
+  position: fixed;
+  bottom: 100px;
+  right: 50px;
+  z-index: 999;
+}
+
+.section-indicator ul {
+  list-style: none;
+}
+
+.section-indicator li {
+  margin: 10px 0;
+}
+
+.shape {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out, border-color 0.5s ease-in-out;
+}
+
+.diamond {
+  transform: rotate(45deg);
+  background-color: #4831d4;
+  border: 2px solid transparent;
+}
+
+.active .diamond {
+  transform: rotate(0deg);
+  background-color: transparent;
+  border-color: #4831d4;
+}
+
+/* ========================
+   OTRAS REGLAS
+========================== */
+img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+/* Sección 1: Desplazamiento hacia arriba */
+.animar-up {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Sección 2: Desplazamiento desde la izquierda */
+.animar-left {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+.fade-in-left {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Sección 3: Desplazamiento desde la derecha */
+.animar-right {
+  opacity: 0;
+  transform: translateX(20px);
+}
+.fade-in-right {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Sección 4: Zoom (acercamiento) */
+.animar-zoom {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.fade-in-zoom {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Sección 5: Animación de flip (giro en el eje Y) */
+.animar-flip {
+  opacity: 0;
+  transform: rotateY(90deg);
+}
+.fade-in-flip {
+  opacity: 1;
+  transform: rotateY(0deg);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
